@@ -1,0 +1,114 @@
+﻿@model ChkListCursos.Models.Instructor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Instructor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idInstructor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idInstructor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreInstructor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreInstructor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoInstructor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoInstructor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ST)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UuidInstructor }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

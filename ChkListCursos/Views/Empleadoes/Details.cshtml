@@ -1,0 +1,114 @@
+﻿@model ChkListCursos.Models.Empleado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_Area.NombreArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_Area.NombreArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.NombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.NombreUsuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UuidEmpleado }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

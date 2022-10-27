@@ -1,0 +1,117 @@
+﻿@model IEnumerable<ChkListCursos.Models.Certificado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idCertificado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreCertificado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duracion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cat_Area.NombreArea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado.NombreEmpleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Instructor.NombreInstructor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idCertificado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreCertificado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaFin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duracion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cat_Area.NombreArea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleado.NombreEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Instructor.NombreInstructor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UuidCertificado }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UuidCertificado }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UuidCertificado })
+        </td>
+    </tr>
+}
+
+</table>

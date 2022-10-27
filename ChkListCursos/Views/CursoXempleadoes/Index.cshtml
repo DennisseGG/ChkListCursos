@@ -1,0 +1,99 @@
+﻿@model IEnumerable<ChkListCursos.Models.CursoXempleado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idCursoXempleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Curso.NombreCurso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado.NombreEmpleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Instructor.NombreInstructor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idCursoXempleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Curso.NombreCurso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleado.NombreEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Instructor.NombreInstructor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UuidCursoXempleado }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UuidCursoXempleado }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UuidCursoXempleado })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="19ba6d7d5cde4b2d94b19b9f67797b4b" Name="Diagram1">
+        <EntityTypeShape EntityType="ChkListCursosModel.Administrador" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChkListCursosModel.cat_Area" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChkListCursosModel.cat_Roles" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChkListCursosModel.Certificado" Width="1.5" PointX="10.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChkListCursosModel.Curso" Width="1.5" PointX="11.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChkListCursosModel.CursoXempleado" Width="1.5" PointX="13.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChkListCursosModel.Empleado" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChkListCursosModel.Instructor" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChkListCursosModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChkListCursosModel.Usuario" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChkListCursosModel.Verificador" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="ChkListCursosModel.FK_Administrador_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_Administrador_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_Certificado_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_Empleado_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_Verificador_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_Usuario_cat_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_Certificado_Empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_Certificado_Instructor" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_Curso_Instructor" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_CursoXempleado_Curso" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_CursoXempleado_Empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_CursoXempleado_Instructor" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_Empleado_Usuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="ChkListCursosModel.FK_Verificador_Usuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

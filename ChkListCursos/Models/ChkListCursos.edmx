@@ -1,0 +1,1137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ChkListCursosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="UuidAdministrador" />
+          </Key>
+          <Property Name="idAdministrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UuidAdministrador" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreAdministrador" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="UuidEmpleado" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UuidArea" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+          <Property Name="UuidUsuario" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cat_Area">
+          <Key>
+            <PropertyRef Name="UuidArea" />
+          </Key>
+          <Property Name="idArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UuidArea" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreArea" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cat_Roles">
+          <Key>
+            <PropertyRef Name="UuidRol" />
+          </Key>
+          <Property Name="idRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UuidRol" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreRol" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Certificado">
+          <Key>
+            <PropertyRef Name="UuidCertificado" />
+          </Key>
+          <Property Name="idCertificado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UuidCertificado" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreCertificado" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="UuidEmpleado" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UuidInstructor" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UuidArea" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+          <Property Name="FechaFin" Type="datetime" Nullable="false" />
+          <Property Name="Duracion" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="UuidCurso" />
+          </Key>
+          <Property Name="idCurso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UuidCurso" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreCurso" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="UuidInstructor" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Capacidad" Type="int" Nullable="false" />
+          <Property Name="Duracion" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+          <Property Name="FechaFin" Type="datetime" Nullable="false" />
+          <Property Name="Estatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CursoXempleado">
+          <Key>
+            <PropertyRef Name="UuidCursoXempleado" />
+          </Key>
+          <Property Name="idCursoXempleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UuidCursoXempleado" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UuidCurso" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UuidEmpleado" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UuidInstructor" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Estatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="UuidEmpleado" />
+          </Key>
+          <Property Name="idEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UuidEmpleado" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreEmpleado" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="NoEmpleado" Type="int" Nullable="false" />
+          <Property Name="UuidArea" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+          <Property Name="UuidUsuario" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Instructor">
+          <Key>
+            <PropertyRef Name="UuidInstructor" />
+          </Key>
+          <Property Name="idInstructor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UuidInstructor" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreInstructor" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="NoInstructor" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Password" Type="varbinary(max)" Nullable="false" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UuidUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UuidUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreUsuario" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="ApellidoPaterno" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="ApellidoMaterno" Type="varchar" MaxLength="250" />
+          <Property Name="NoEmpleado" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="UuidArea" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UuidRol" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Verificador">
+          <Key>
+            <PropertyRef Name="UuidVerificador" />
+          </Key>
+          <Property Name="idCurso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UuidVerificador" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreVerificador" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="UuidEmpleado" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UuidArea" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+          <Property Name="UuidUsuario" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Administrador_Area">
+          <End Role="cat_Area" Type="Self.cat_Area" Multiplicity="1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_Area">
+              <PropertyRef Name="UuidArea" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="UuidArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrador_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UuidUsuario" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="UuidUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Certificado_Area">
+          <End Role="cat_Area" Type="Self.cat_Area" Multiplicity="1" />
+          <End Role="Certificado" Type="Self.Certificado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_Area">
+              <PropertyRef Name="UuidArea" />
+            </Principal>
+            <Dependent Role="Certificado">
+              <PropertyRef Name="UuidArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Certificado_Empleado">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="Certificado" Type="Self.Certificado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="UuidEmpleado" />
+            </Principal>
+            <Dependent Role="Certificado">
+              <PropertyRef Name="UuidEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Certificado_Instructor">
+          <End Role="Instructor" Type="Self.Instructor" Multiplicity="1" />
+          <End Role="Certificado" Type="Self.Certificado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instructor">
+              <PropertyRef Name="UuidInstructor" />
+            </Principal>
+            <Dependent Role="Certificado">
+              <PropertyRef Name="UuidInstructor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Curso_Instructor">
+          <End Role="Instructor" Type="Self.Instructor" Multiplicity="1" />
+          <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instructor">
+              <PropertyRef Name="UuidInstructor" />
+            </Principal>
+            <Dependent Role="Curso">
+              <PropertyRef Name="UuidInstructor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CursoXempleado_Curso">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+          <End Role="CursoXempleado" Type="Self.CursoXempleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="UuidCurso" />
+            </Principal>
+            <Dependent Role="CursoXempleado">
+              <PropertyRef Name="UuidCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CursoXempleado_Empleado">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="CursoXempleado" Type="Self.CursoXempleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="UuidEmpleado" />
+            </Principal>
+            <Dependent Role="CursoXempleado">
+              <PropertyRef Name="UuidEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CursoXempleado_Instructor">
+          <End Role="Instructor" Type="Self.Instructor" Multiplicity="1" />
+          <End Role="CursoXempleado" Type="Self.CursoXempleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instructor">
+              <PropertyRef Name="UuidInstructor" />
+            </Principal>
+            <Dependent Role="CursoXempleado">
+              <PropertyRef Name="UuidInstructor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Area">
+          <End Role="cat_Area" Type="Self.cat_Area" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_Area">
+              <PropertyRef Name="UuidArea" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="UuidArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Usuario1">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UuidUsuario" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="UuidUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_cat_Roles">
+          <End Role="cat_Roles" Type="Self.cat_Roles" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_Roles">
+              <PropertyRef Name="UuidRol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="UuidRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Verificador_Area">
+          <End Role="cat_Area" Type="Self.cat_Area" Multiplicity="1" />
+          <End Role="Verificador" Type="Self.Verificador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_Area">
+              <PropertyRef Name="UuidArea" />
+            </Principal>
+            <Dependent Role="Verificador">
+              <PropertyRef Name="UuidArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Verificador_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Verificador" Type="Self.Verificador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UuidUsuario" />
+            </Principal>
+            <Dependent Role="Verificador">
+              <PropertyRef Name="UuidUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ChkListCursosModelStoreContainer">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_Area" EntityType="Self.cat_Area" Schema="dbo" Table="cat.Area" store:Type="Tables" />
+          <EntitySet Name="cat_Roles" EntityType="Self.cat_Roles" Schema="dbo" Table="cat.Roles" store:Type="Tables" />
+          <EntitySet Name="Certificado" EntityType="Self.Certificado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Curso" EntityType="Self.Curso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CursoXempleado" EntityType="Self.CursoXempleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Instructor" EntityType="Self.Instructor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Verificador" EntityType="Self.Verificador" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Administrador_Area" Association="Self.FK_Administrador_Area">
+            <End Role="cat_Area" EntitySet="cat_Area" />
+            <End Role="Administrador" EntitySet="Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrador_Usuario" Association="Self.FK_Administrador_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Administrador" EntitySet="Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Certificado_Area" Association="Self.FK_Certificado_Area">
+            <End Role="cat_Area" EntitySet="cat_Area" />
+            <End Role="Certificado" EntitySet="Certificado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Certificado_Empleado" Association="Self.FK_Certificado_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Certificado" EntitySet="Certificado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Certificado_Instructor" Association="Self.FK_Certificado_Instructor">
+            <End Role="Instructor" EntitySet="Instructor" />
+            <End Role="Certificado" EntitySet="Certificado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Curso_Instructor" Association="Self.FK_Curso_Instructor">
+            <End Role="Instructor" EntitySet="Instructor" />
+            <End Role="Curso" EntitySet="Curso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CursoXempleado_Curso" Association="Self.FK_CursoXempleado_Curso">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="CursoXempleado" EntitySet="CursoXempleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CursoXempleado_Empleado" Association="Self.FK_CursoXempleado_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="CursoXempleado" EntitySet="CursoXempleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CursoXempleado_Instructor" Association="Self.FK_CursoXempleado_Instructor">
+            <End Role="Instructor" EntitySet="Instructor" />
+            <End Role="CursoXempleado" EntitySet="CursoXempleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Area" Association="Self.FK_Empleado_Area">
+            <End Role="cat_Area" EntitySet="cat_Area" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Usuario1" Association="Self.FK_Empleado_Usuario1">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_cat_Roles" Association="Self.FK_Usuario_cat_Roles">
+            <End Role="cat_Roles" EntitySet="cat_Roles" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Verificador_Area" Association="Self.FK_Verificador_Area">
+            <End Role="cat_Area" EntitySet="cat_Area" />
+            <End Role="Verificador" EntitySet="Verificador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Verificador_Usuario" Association="Self.FK_Verificador_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Verificador" EntitySet="Verificador" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ChkListCursosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="UuidAdministrador" />
+          </Key>
+          <Property Name="idAdministrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UuidAdministrador" Type="Guid" Nullable="false" />
+          <Property Name="NombreAdministrador" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UuidEmpleado" Type="Guid" Nullable="false" />
+          <Property Name="UuidArea" Type="Guid" Nullable="false" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+          <Property Name="UuidUsuario" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="cat_Area" Relationship="Self.FK_Administrador_Area" FromRole="Administrador" ToRole="cat_Area" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Administrador_Usuario" FromRole="Administrador" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="cat_Area">
+          <Key>
+            <PropertyRef Name="UuidArea" />
+          </Key>
+          <Property Name="idArea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UuidArea" Type="Guid" Nullable="false" />
+          <Property Name="NombreArea" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Administrador" Relationship="Self.FK_Administrador_Area" FromRole="cat_Area" ToRole="Administrador" />
+          <NavigationProperty Name="Certificado" Relationship="Self.FK_Certificado_Area" FromRole="cat_Area" ToRole="Certificado" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_Area" FromRole="cat_Area" ToRole="Empleado" />
+          <NavigationProperty Name="Verificador" Relationship="Self.FK_Verificador_Area" FromRole="cat_Area" ToRole="Verificador" />
+        </EntityType>
+        <EntityType Name="cat_Roles">
+          <Key>
+            <PropertyRef Name="UuidRol" />
+          </Key>
+          <Property Name="idRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UuidRol" Type="Guid" Nullable="false" />
+          <Property Name="NombreRol" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_cat_Roles" FromRole="cat_Roles" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Certificado">
+          <Key>
+            <PropertyRef Name="UuidCertificado" />
+          </Key>
+          <Property Name="idCertificado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UuidCertificado" Type="Guid" Nullable="false" />
+          <Property Name="NombreCertificado" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UuidEmpleado" Type="Guid" Nullable="false" />
+          <Property Name="UuidInstructor" Type="Guid" Nullable="false" />
+          <Property Name="UuidArea" Type="Guid" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Duracion" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="cat_Area" Relationship="Self.FK_Certificado_Area" FromRole="Certificado" ToRole="cat_Area" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK_Certificado_Empleado" FromRole="Certificado" ToRole="Empleado" />
+          <NavigationProperty Name="Instructor" Relationship="Self.FK_Certificado_Instructor" FromRole="Certificado" ToRole="Instructor" />
+        </EntityType>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="UuidCurso" />
+          </Key>
+          <Property Name="idCurso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UuidCurso" Type="Guid" Nullable="false" />
+          <Property Name="NombreCurso" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UuidInstructor" Type="Guid" Nullable="false" />
+          <Property Name="Capacidad" Type="Int32" Nullable="false" />
+          <Property Name="Duracion" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Estatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Instructor" Relationship="Self.FK_Curso_Instructor" FromRole="Curso" ToRole="Instructor" />
+          <NavigationProperty Name="CursoXempleado" Relationship="Self.FK_CursoXempleado_Curso" FromRole="Curso" ToRole="CursoXempleado" />
+        </EntityType>
+        <EntityType Name="CursoXempleado">
+          <Key>
+            <PropertyRef Name="UuidCursoXempleado" />
+          </Key>
+          <Property Name="idCursoXempleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UuidCursoXempleado" Type="Guid" Nullable="false" />
+          <Property Name="UuidCurso" Type="Guid" Nullable="false" />
+          <Property Name="UuidEmpleado" Type="Guid" Nullable="false" />
+          <Property Name="UuidInstructor" Type="Guid" Nullable="false" />
+          <Property Name="Estatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Curso" Relationship="Self.FK_CursoXempleado_Curso" FromRole="CursoXempleado" ToRole="Curso" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK_CursoXempleado_Empleado" FromRole="CursoXempleado" ToRole="Empleado" />
+          <NavigationProperty Name="Instructor" Relationship="Self.FK_CursoXempleado_Instructor" FromRole="CursoXempleado" ToRole="Instructor" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="UuidEmpleado" />
+          </Key>
+          <Property Name="idEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UuidEmpleado" Type="Guid" Nullable="false" />
+          <Property Name="NombreEmpleado" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NoEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="UuidArea" Type="Guid" Nullable="false" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+          <Property Name="UuidUsuario" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="cat_Area" Relationship="Self.FK_Empleado_Area" FromRole="Empleado" ToRole="cat_Area" />
+          <NavigationProperty Name="Certificado" Relationship="Self.FK_Certificado_Empleado" FromRole="Empleado" ToRole="Certificado" />
+          <NavigationProperty Name="CursoXempleado" Relationship="Self.FK_CursoXempleado_Empleado" FromRole="Empleado" ToRole="CursoXempleado" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Empleado_Usuario1" FromRole="Empleado" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Instructor">
+          <Key>
+            <PropertyRef Name="UuidInstructor" />
+          </Key>
+          <Property Name="idInstructor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UuidInstructor" Type="Guid" Nullable="false" />
+          <Property Name="NombreInstructor" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NoInstructor" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Certificado" Relationship="Self.FK_Certificado_Instructor" FromRole="Instructor" ToRole="Certificado" />
+          <NavigationProperty Name="Curso" Relationship="Self.FK_Curso_Instructor" FromRole="Instructor" ToRole="Curso" />
+          <NavigationProperty Name="CursoXempleado" Relationship="Self.FK_CursoXempleado_Instructor" FromRole="Instructor" ToRole="CursoXempleado" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UuidUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UuidUsuario" Type="Guid" Nullable="false" />
+          <Property Name="NombreUsuario" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApellidoPaterno" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApellidoMaterno" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NoEmpleado" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="UuidArea" Type="Guid" Nullable="false" />
+          <Property Name="UuidRol" Type="Guid" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Administrador" Relationship="Self.FK_Administrador_Usuario" FromRole="Usuario" ToRole="Administrador" />
+          <NavigationProperty Name="cat_Roles" Relationship="Self.FK_Usuario_cat_Roles" FromRole="Usuario" ToRole="cat_Roles" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_Usuario1" FromRole="Usuario" ToRole="Empleado" />
+          <NavigationProperty Name="Verificador" Relationship="Self.FK_Verificador_Usuario" FromRole="Usuario" ToRole="Verificador" />
+        </EntityType>
+        <EntityType Name="Verificador">
+          <Key>
+            <PropertyRef Name="UuidVerificador" />
+          </Key>
+          <Property Name="idCurso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UuidVerificador" Type="Guid" Nullable="false" />
+          <Property Name="NombreVerificador" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UuidEmpleado" Type="Guid" Nullable="false" />
+          <Property Name="UuidArea" Type="Guid" Nullable="false" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+          <Property Name="UuidUsuario" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="cat_Area" Relationship="Self.FK_Verificador_Area" FromRole="Verificador" ToRole="cat_Area" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Verificador_Usuario" FromRole="Verificador" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="FK_Administrador_Area">
+          <End Role="cat_Area" Type="Self.cat_Area" Multiplicity="1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_Area">
+              <PropertyRef Name="UuidArea" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="UuidArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrador_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UuidUsuario" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="UuidUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Certificado_Area">
+          <End Role="cat_Area" Type="Self.cat_Area" Multiplicity="1" />
+          <End Role="Certificado" Type="Self.Certificado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_Area">
+              <PropertyRef Name="UuidArea" />
+            </Principal>
+            <Dependent Role="Certificado">
+              <PropertyRef Name="UuidArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Area">
+          <End Role="cat_Area" Type="Self.cat_Area" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_Area">
+              <PropertyRef Name="UuidArea" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="UuidArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Verificador_Area">
+          <End Role="cat_Area" Type="Self.cat_Area" Multiplicity="1" />
+          <End Role="Verificador" Type="Self.Verificador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_Area">
+              <PropertyRef Name="UuidArea" />
+            </Principal>
+            <Dependent Role="Verificador">
+              <PropertyRef Name="UuidArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_cat_Roles">
+          <End Role="cat_Roles" Type="Self.cat_Roles" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_Roles">
+              <PropertyRef Name="UuidRol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="UuidRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Certificado_Empleado">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="Certificado" Type="Self.Certificado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="UuidEmpleado" />
+            </Principal>
+            <Dependent Role="Certificado">
+              <PropertyRef Name="UuidEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Certificado_Instructor">
+          <End Role="Instructor" Type="Self.Instructor" Multiplicity="1" />
+          <End Role="Certificado" Type="Self.Certificado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instructor">
+              <PropertyRef Name="UuidInstructor" />
+            </Principal>
+            <Dependent Role="Certificado">
+              <PropertyRef Name="UuidInstructor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Curso_Instructor">
+          <End Role="Instructor" Type="Self.Instructor" Multiplicity="1" />
+          <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instructor">
+              <PropertyRef Name="UuidInstructor" />
+            </Principal>
+            <Dependent Role="Curso">
+              <PropertyRef Name="UuidInstructor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CursoXempleado_Curso">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+          <End Role="CursoXempleado" Type="Self.CursoXempleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="UuidCurso" />
+            </Principal>
+            <Dependent Role="CursoXempleado">
+              <PropertyRef Name="UuidCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CursoXempleado_Empleado">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="CursoXempleado" Type="Self.CursoXempleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="UuidEmpleado" />
+            </Principal>
+            <Dependent Role="CursoXempleado">
+              <PropertyRef Name="UuidEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CursoXempleado_Instructor">
+          <End Role="Instructor" Type="Self.Instructor" Multiplicity="1" />
+          <End Role="CursoXempleado" Type="Self.CursoXempleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instructor">
+              <PropertyRef Name="UuidInstructor" />
+            </Principal>
+            <Dependent Role="CursoXempleado">
+              <PropertyRef Name="UuidInstructor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Usuario1">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UuidUsuario" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="UuidUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Verificador_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Verificador" Type="Self.Verificador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UuidUsuario" />
+            </Principal>
+            <Dependent Role="Verificador">
+              <PropertyRef Name="UuidUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ChkListCursosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" />
+          <EntitySet Name="cat_Area" EntityType="Self.cat_Area" />
+          <EntitySet Name="cat_Roles" EntityType="Self.cat_Roles" />
+          <EntitySet Name="Certificado" EntityType="Self.Certificado" />
+          <EntitySet Name="Curso" EntityType="Self.Curso" />
+          <EntitySet Name="CursoXempleado" EntityType="Self.CursoXempleado" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+          <EntitySet Name="Instructor" EntityType="Self.Instructor" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <EntitySet Name="Verificador" EntityType="Self.Verificador" />
+          <AssociationSet Name="FK_Administrador_Area" Association="Self.FK_Administrador_Area">
+            <End Role="cat_Area" EntitySet="cat_Area" />
+            <End Role="Administrador" EntitySet="Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrador_Usuario" Association="Self.FK_Administrador_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Administrador" EntitySet="Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Certificado_Area" Association="Self.FK_Certificado_Area">
+            <End Role="cat_Area" EntitySet="cat_Area" />
+            <End Role="Certificado" EntitySet="Certificado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Area" Association="Self.FK_Empleado_Area">
+            <End Role="cat_Area" EntitySet="cat_Area" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Verificador_Area" Association="Self.FK_Verificador_Area">
+            <End Role="cat_Area" EntitySet="cat_Area" />
+            <End Role="Verificador" EntitySet="Verificador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_cat_Roles" Association="Self.FK_Usuario_cat_Roles">
+            <End Role="cat_Roles" EntitySet="cat_Roles" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Certificado_Empleado" Association="Self.FK_Certificado_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Certificado" EntitySet="Certificado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Certificado_Instructor" Association="Self.FK_Certificado_Instructor">
+            <End Role="Instructor" EntitySet="Instructor" />
+            <End Role="Certificado" EntitySet="Certificado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Curso_Instructor" Association="Self.FK_Curso_Instructor">
+            <End Role="Instructor" EntitySet="Instructor" />
+            <End Role="Curso" EntitySet="Curso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CursoXempleado_Curso" Association="Self.FK_CursoXempleado_Curso">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="CursoXempleado" EntitySet="CursoXempleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CursoXempleado_Empleado" Association="Self.FK_CursoXempleado_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="CursoXempleado" EntitySet="CursoXempleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CursoXempleado_Instructor" Association="Self.FK_CursoXempleado_Instructor">
+            <End Role="Instructor" EntitySet="Instructor" />
+            <End Role="CursoXempleado" EntitySet="CursoXempleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Usuario1" Association="Self.FK_Empleado_Usuario1">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Verificador_Usuario" Association="Self.FK_Verificador_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Verificador" EntitySet="Verificador" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ChkListCursosModelStoreContainer" CdmEntityContainer="ChkListCursosEntities">
+          <EntitySetMapping Name="Administrador">
+            <EntityTypeMapping TypeName="ChkListCursosModel.Administrador">
+              <MappingFragment StoreEntitySet="Administrador">
+                <ScalarProperty Name="idAdministrador" ColumnName="idAdministrador" />
+                <ScalarProperty Name="UuidAdministrador" ColumnName="UuidAdministrador" />
+                <ScalarProperty Name="NombreAdministrador" ColumnName="NombreAdministrador" />
+                <ScalarProperty Name="UuidEmpleado" ColumnName="UuidEmpleado" />
+                <ScalarProperty Name="UuidArea" ColumnName="UuidArea" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+                <ScalarProperty Name="UuidUsuario" ColumnName="UuidUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_Area">
+            <EntityTypeMapping TypeName="ChkListCursosModel.cat_Area">
+              <MappingFragment StoreEntitySet="cat_Area">
+                <ScalarProperty Name="idArea" ColumnName="idArea" />
+                <ScalarProperty Name="UuidArea" ColumnName="UuidArea" />
+                <ScalarProperty Name="NombreArea" ColumnName="NombreArea" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_Roles">
+            <EntityTypeMapping TypeName="ChkListCursosModel.cat_Roles">
+              <MappingFragment StoreEntitySet="cat_Roles">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="UuidRol" ColumnName="UuidRol" />
+                <ScalarProperty Name="NombreRol" ColumnName="NombreRol" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Certificado">
+            <EntityTypeMapping TypeName="ChkListCursosModel.Certificado">
+              <MappingFragment StoreEntitySet="Certificado">
+                <ScalarProperty Name="idCertificado" ColumnName="idCertificado" />
+                <ScalarProperty Name="UuidCertificado" ColumnName="UuidCertificado" />
+                <ScalarProperty Name="NombreCertificado" ColumnName="NombreCertificado" />
+                <ScalarProperty Name="UuidEmpleado" ColumnName="UuidEmpleado" />
+                <ScalarProperty Name="UuidInstructor" ColumnName="UuidInstructor" />
+                <ScalarProperty Name="UuidArea" ColumnName="UuidArea" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Curso">
+            <EntityTypeMapping TypeName="ChkListCursosModel.Curso">
+              <MappingFragment StoreEntitySet="Curso">
+                <ScalarProperty Name="idCurso" ColumnName="idCurso" />
+                <ScalarProperty Name="UuidCurso" ColumnName="UuidCurso" />
+                <ScalarProperty Name="NombreCurso" ColumnName="NombreCurso" />
+                <ScalarProperty Name="UuidInstructor" ColumnName="UuidInstructor" />
+                <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+                <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CursoXempleado">
+            <EntityTypeMapping TypeName="ChkListCursosModel.CursoXempleado">
+              <MappingFragment StoreEntitySet="CursoXempleado">
+                <ScalarProperty Name="idCursoXempleado" ColumnName="idCursoXempleado" />
+                <ScalarProperty Name="UuidCursoXempleado" ColumnName="UuidCursoXempleado" />
+                <ScalarProperty Name="UuidCurso" ColumnName="UuidCurso" />
+                <ScalarProperty Name="UuidEmpleado" ColumnName="UuidEmpleado" />
+                <ScalarProperty Name="UuidInstructor" ColumnName="UuidInstructor" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleado">
+            <EntityTypeMapping TypeName="ChkListCursosModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+                <ScalarProperty Name="UuidEmpleado" ColumnName="UuidEmpleado" />
+                <ScalarProperty Name="NombreEmpleado" ColumnName="NombreEmpleado" />
+                <ScalarProperty Name="NoEmpleado" ColumnName="NoEmpleado" />
+                <ScalarProperty Name="UuidArea" ColumnName="UuidArea" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+                <ScalarProperty Name="UuidUsuario" ColumnName="UuidUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instructor">
+            <EntityTypeMapping TypeName="ChkListCursosModel.Instructor">
+              <MappingFragment StoreEntitySet="Instructor">
+                <ScalarProperty Name="idInstructor" ColumnName="idInstructor" />
+                <ScalarProperty Name="UuidInstructor" ColumnName="UuidInstructor" />
+                <ScalarProperty Name="NombreInstructor" ColumnName="NombreInstructor" />
+                <ScalarProperty Name="NoInstructor" ColumnName="NoInstructor" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ChkListCursosModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="ChkListCursosModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="UuidUsuario" ColumnName="UuidUsuario" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+                <ScalarProperty Name="NoEmpleado" ColumnName="NoEmpleado" />
+                <ScalarProperty Name="UuidArea" ColumnName="UuidArea" />
+                <ScalarProperty Name="UuidRol" ColumnName="UuidRol" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Verificador">
+            <EntityTypeMapping TypeName="ChkListCursosModel.Verificador">
+              <MappingFragment StoreEntitySet="Verificador">
+                <ScalarProperty Name="idCurso" ColumnName="idCurso" />
+                <ScalarProperty Name="UuidVerificador" ColumnName="UuidVerificador" />
+                <ScalarProperty Name="NombreVerificador" ColumnName="NombreVerificador" />
+                <ScalarProperty Name="UuidEmpleado" ColumnName="UuidEmpleado" />
+                <ScalarProperty Name="UuidArea" ColumnName="UuidArea" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+                <ScalarProperty Name="UuidUsuario" ColumnName="UuidUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

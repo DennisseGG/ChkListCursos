@@ -1,0 +1,146 @@
+﻿@model ChkListCursos.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoPaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoPaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoMaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoMaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UuidArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UuidArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_Roles.NombreRol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_Roles.NombreRol)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UuidUsuario }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
