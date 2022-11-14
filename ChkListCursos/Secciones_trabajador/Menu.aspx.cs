@@ -11,7 +11,19 @@ namespace ChkListCursos.Secciones_trabajador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UsuarioLogueado"] != null)
+            {
+                String usuariologueado = Session["UsuarioLogueado"].ToString();
+                lblBienvenida.Text = "Bienvenido " + usuariologueado;
+            }
+            else {
+                Response.Redirect("../AccesoTrabajador/Login.aspx");
+            }
+        }
 
+        protected void BtnCerrar_Click(object sender, EventArgs e) {
+            Session.Remove("UsuarioLogueado");
+            Response.Redirect("../AccesoTrabajador/Login.aspx");
         }
     }
 }
