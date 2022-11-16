@@ -60,7 +60,7 @@
                     </div>
                     <hr />
                     <div class="row">
-                        <asp:Label runat="server" CssClass="" ID="lblError"></asp:Label>
+                        <asp:Label runat="server" CssClass="" id="lblError"></asp:Label>
                     </div>
                     <br />
                     <div class="row">
