@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ChkListCursos.Acceso.Login" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ChkListCursos.Acceso.Login" %>
 
 <!DOCTYPE html>
 
@@ -15,6 +16,33 @@
     <title>Login CLCURSOS</title>
 </head>
 <body class="bg-light">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Check List Cursos</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Usuarios">Usuarios</a></li>
+                    <li><a href="/Cursoes">Cursos</a></li>
+                    <li><a href="/Certificadoes">Certificados</a></li>
+                </ul>
+                    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/Account/Register" id="registerLink">Registrarse</a></li>
+        <li><a href="/Account/Login" id="loginLink">Iniciar sesión</a></li>
+    </ul>
+
+            </div>
+        </div>
+    </div>
+
+
     <div class="wrapper">
         <div class="formcontent">
             <form id="formulario_login" runat="server">

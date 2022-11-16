@@ -163,6 +163,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoInstructor\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccesoInstructor\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AccesoTrabajador\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -267,6 +274,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AccesoInstructor\login.aspx" />
+    <Content Include="AccesoInstructor\signin.css" />
     <Content Include="AccesoTrabajador\Login.aspx" />
     <Content Include="AccesoTrabajador\login.css" />
     <Content Include="Content\bootstrap-theme.css" />
