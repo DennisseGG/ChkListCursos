@@ -23,7 +23,10 @@ namespace ChkListCursos.Secciones_trabajador
 
         protected void BtnCerrar_Click(object sender, EventArgs e) {
             Session.Remove("UsuarioLogueado");
-            Response.Redirect("../AccesoTrabajador/Login.aspx");
+
+            var page = HttpContext.Current.Handler as Page;
+
+            Response.Redirect(page.GetRouteUrl("Default", new { Controller = "Home", Action = "Index" }), false);
         }
     }
 }
