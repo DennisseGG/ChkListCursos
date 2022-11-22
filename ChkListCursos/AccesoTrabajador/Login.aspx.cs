@@ -14,7 +14,7 @@ namespace ChkListCursos.Acceso
 
         String patron = "CLCURSOSUNIDEH";
         protected void BtnIngresar_Click(object sender, EventArgs e) {
-            String conectar = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            String conectar = ConfigurationManager.ConnectionStrings["newconexion"].ConnectionString;
             SqlConnection sqlConectar = new SqlConnection(conectar);
             SqlCommand cmd = new SqlCommand("ValidarUsuario", sqlConectar)
             {

@@ -163,13 +163,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoInstructor\login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AccesoInstructor\login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AccesoTrabajador\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -192,6 +185,7 @@
     <Compile Include="Controllers\EmpleadoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstructorsController.cs" />
+    <Compile Include="Controllers\LoginInstructorController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\VerificadorsController.cs" />
@@ -247,6 +241,7 @@
     <Compile Include="Models\Instructor.cs">
       <DependentUpon>ChkListCursos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\IsntructorClase.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>ChkListCursos.tt</DependentUpon>
@@ -275,14 +270,13 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AccesoInstructor\login.aspx" />
-    <Content Include="AccesoInstructor\signin.css" />
     <Content Include="AccesoTrabajador\Login.aspx" />
     <Content Include="AccesoTrabajador\login.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -405,8 +399,11 @@
     <Content Include="Views\Verificadors\Details.cshtml" />
     <Content Include="Views\Verificadors\Edit.cshtml" />
     <Content Include="Views\Verificadors\Index.cshtml" />
+    <Content Include="Views\LoginInstructor\Login.cshtml" />
+    <Content Include="Views\LoginInstructor\Registrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AccesoInstructor\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
