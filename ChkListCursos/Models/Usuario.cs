@@ -14,6 +14,9 @@ namespace ChkListCursos.Models
     
     public partial class Usuario
     {
+        internal string ConfirmarClave;
+        internal string clave;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuario()
         {
