@@ -2,6 +2,9 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Claims;
+using System.Net;
+using System.Web.ModelBinding;
 
 namespace ChkListCursos.Acceso
 {

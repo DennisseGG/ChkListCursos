@@ -13,5 +13,10 @@ namespace ChkListCursos.Secciones_trabajador
         {
 
         }
+
+        protected void VolverMenuTra_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Menu.aspx");
+        }
     }
 }

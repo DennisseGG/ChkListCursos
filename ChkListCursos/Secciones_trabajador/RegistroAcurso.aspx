@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Master_Trabajador.Master" AutoEventWireup="true" CodeBehind="RegistroAcurso.aspx.cs" Inherits="ChkListCursos.Secciones_trabajador.RegistroAcurso" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Master_Trabajador.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="RegistroAcurso.aspx.cs" Inherits="ChkListCursos.Secciones_trabajador.RegistroAcurso" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -15,6 +15,10 @@
     </select>
   </div><br/>
 
-  <button type="submit" class="btn btn-primary">Registrarme en curso</button>
+  <p><button type="submit" class="btn btn-primary">Registrarme en curso</button></p><br /><br />
+
+    
+   <p><button href="https://asp.net" heigth="1000 " class="btn btn-primary col-4" ID="Volver" runat="server" Text="Cerrar sesion" onserverclick="VolverMenuTra_Click"> <img src="https://cdn-icons-png.flaticon.com/512/17/17699.png" height="40" width="50"/> <br /> Volver a menu &raquo;</button></p>
+ 
 </form><br/><br/>
 </asp:Content>
