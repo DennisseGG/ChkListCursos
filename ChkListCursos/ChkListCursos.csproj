@@ -328,6 +328,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Secciones_trabajador\cursosdisponibles.aspx" />
+    <Content Include="Secciones_trabajador\JavaTrabajador.js" />
     <Content Include="Secciones_trabajador\Menu.aspx" />
     <Content Include="Secciones_trabajador\MisCursos.aspx" />
     <Content Include="Secciones_trabajador\RegistroAcurso.aspx" />
