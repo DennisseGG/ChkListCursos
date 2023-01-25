@@ -1,4 +1,4 @@
-﻿<%@ Page Title="cursos disponibles" Language="C#" MasterPageFile="~/Masters/Master_Trabajador.Master" AutoEventWireup="true" CodeBehind="cursosdisponibles.aspx.cs" Inherits="ChkListCursos.Secciones_trabajador.cursosdisponibles" %>
+﻿<%@ Page Title="Cursos" Language="C#" MasterPageFile="~/Masters/Master_Trabajador.Master" AutoEventWireup="true" CodeBehind="cursosdisponibles.aspx.cs" Inherits="ChkListCursos.Secciones_trabajador.cursosdisponibles" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -10,7 +10,6 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <a id="prueba"></a>
             <asp:Label ID="titleCurso" runat="server" Text="" CssClass="h5"><Strong>Curso: </Strong></asp:Label><br>
             <asp:Label ID="lbcurso" runat="server" Text="" style="font-weight:100; font-size:xx-large; color:dimgray;" CssClass="a"></asp:Label><br>
             <asp:Label ID="titleIntructor" runat="server" Text="" CssClass="h5"><Strong>Instructor: </Strong></asp:Label><br>
@@ -28,7 +27,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Registarme en curso</button>
+            <button type="button" class="btn btn-primary" runat="server" onServerClick="Registrar" >Registarme en curso</button>
           </div>
         </div>
       </div>
@@ -58,7 +57,7 @@
         </asp:GridView>
     </div></br>
 
-    <p><button href="https://asp.net" heigth="1000 " class="btn btn-primary col-4" ID="Volver" runat="server" Text="Cerrar sesion" onserverclick="VolverMenuTra_Click"> <img src="https://cdn-icons-png.flaticon.com/512/17/17699.png" height="40" width="50"/> <br /> Volver a menu &raquo;</button></p>
+    <p><button href="https://asp.net" heigth="1000 " class="btn btn-primary col-4" ID="Volver" runat="server" Text="Cerrar sesion" onserverclick="VolverMenuTra_Click"> <img src="https://cdn-icons-png.flaticon.com/512/17/17699.png" height="40" width="50"/> <br /> Volver atras &raquo;</button></p>
     
     <script src="JavaTrabajador.js"></script>
    

@@ -11,25 +11,34 @@ namespace ChkListCursos.Secciones_trabajador
 {
 
 
-    public partial class RegistroAcurso
+    public partial class Opciones_busqueda
     {
 
         /// <summary>
-        /// Control DDLCursos.
+        /// Control BtnBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLCursos;
+        protected global::System.Web.UI.HtmlControls.HtmlButton BtnBuscar;
 
         /// <summary>
-        /// Control Volver.
+        /// Control BtnSeleccionar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton Volver;
+        protected global::System.Web.UI.HtmlControls.HtmlButton BtnSeleccionar;
+
+        /// <summary>
+        /// Control BtnVolver.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton BtnVolver;
     }
 }

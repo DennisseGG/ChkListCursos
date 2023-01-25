@@ -19,14 +19,18 @@ namespace ChkListCursos.Secciones_trabajador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UsuarioLogueado"] == null)
+            {
+                Response.Redirect("../AccesoTrabajador/Login.aspx");
+            }
 
             if (!IsPostBack)
             {
                 using (SqlConnection cone = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
                 {
 
-                    Guid myGuid = new Guid("7fa7c1e5-d9b5-44b0-8556-5aa5b0701e4f");
                     string myGuidString = "7fa7c1e5-d9b5-44b0-8556-5aa5b0701e4f";
+                    Guid myGuid = new Guid(myGuidString);
 
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;

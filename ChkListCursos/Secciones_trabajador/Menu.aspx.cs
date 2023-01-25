@@ -36,7 +36,7 @@ namespace ChkListCursos.Secciones_trabajador
         
         protected void BtnRegistro_Click(object sender, EventArgs e)
         {
-            Response.Redirect("RegistroAcurso.aspx");
+            Response.Redirect("Opciones_busqueda.aspx");
         }
 
         protected void BtnMisCursos_Click(object sender, EventArgs e)

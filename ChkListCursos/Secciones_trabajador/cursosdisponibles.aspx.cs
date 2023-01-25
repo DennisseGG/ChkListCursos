@@ -12,24 +12,52 @@ using System.Reflection;
 using ChkListCursos.Models;
 using System.Threading;
 using System.Data.Common;
+using System.Drawing;
 
 namespace ChkListCursos.Secciones_trabajador
 {
     public partial class cursosdisponibles : System.Web.UI.Page
     {
 
+        public static string bus = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) {
-                using (SqlConnection cone=new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString)) {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "SelectCurDiponibles";
-                    cmd.Connection = cone;
-                    cone.Open();
-                    gvdcurso.DataSource = cmd.ExecuteReader();
-                    gvdcurso.DataBind();
+            if (Session["UsuarioLogueado"] == null)
+            {
+                Response.Redirect("../AccesoTrabajador/Login.aspx");
+            }
 
+            if (!IsPostBack) {
+
+                if (Buscador.busqueda != "") {
+                    bus = Buscador.busqueda;
+                    Buscador.busqueda = "";
+
+                    using (SqlConnection cone = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+                    {
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "busquedaCursos";
+                        cmd.Parameters.AddWithValue("@search", bus);
+                        cmd.Connection = cone;
+                        cone.Open();
+                        gvdcurso.DataSource = cmd.ExecuteReader();
+                        gvdcurso.DataBind();
+                        cone.Close();
+                    }
+                }
+                else {
+                    using (SqlConnection cone = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+                    {
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "SelectCurDiponibles";
+                        cmd.Connection = cone;
+                        cone.Open();
+                        gvdcurso.DataSource = cmd.ExecuteReader();
+                        gvdcurso.DataBind();
+                        cone.Close();
+                    }
                 }
             }
 
@@ -37,14 +65,25 @@ namespace ChkListCursos.Secciones_trabajador
 
          protected void VolverMenuTra_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Menu.aspx");
+            if (bus == ""){
+                Response.Redirect("Menu.aspx");
+            }
+            else{
+                bus = "";
+                Response.Redirect("Buscador.aspx");
+            }
+            
         }
 
+
+        public static int id_global = 0;
+        public static int id_global_bus = 0;
+        public static int id_previa;
         //System.Web.UI.WebControls.GridViewCommandEventArgs e
         protected void Vermas_Click(object sender, GridViewCommandEventArgs e)
         {
             int row = int.Parse(e.CommandArgument.ToString());
-            string id = gvdcurso.Rows[row-1].Cells[1].Text;
+            //string id = gvdcurso.Rows[row-1].Cells[1].Text;
 
             if (e.CommandName == "Mostrar") {
 
@@ -54,7 +93,9 @@ namespace ChkListCursos.Secciones_trabajador
 
                     string sql = "SELECT NombreCurso, DirigidoA, UuidInstructor, Capacidad, FechaInicio, Hora, Duracion FROM Cursos_dispo WHERE idCurso_dis =@id";
                     SqlCommand cmd = new SqlCommand(sql, cn);
-                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@id", row);
+
+                    id_previa = row;
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -103,6 +144,18 @@ namespace ChkListCursos.Secciones_trabajador
                 
             }
         }
+
+        protected void Registrar(object sender, EventArgs e) 
+        {
+            if (bus == "") {
+                id_global = id_previa;
+            }else {
+                id_global_bus = id_previa;
+            }
+            
+            Response.Redirect("Registrar.aspx");
+        }
+
 
      
     }

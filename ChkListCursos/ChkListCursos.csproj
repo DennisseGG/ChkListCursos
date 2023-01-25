@@ -253,6 +253,13 @@
       <DependentUpon>ChkListCursos.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Secciones_trabajador\Buscador.aspx.cs">
+      <DependentUpon>Buscador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Secciones_trabajador\Buscador.aspx.designer.cs">
+      <DependentUpon>Buscador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Secciones_trabajador\cursosdisponibles.aspx.cs">
       <DependentUpon>cursosdisponibles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -274,12 +281,33 @@
     <Compile Include="Secciones_trabajador\MisCursos.aspx.designer.cs">
       <DependentUpon>MisCursos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Secciones_trabajador\Opciones_busqueda.aspx.cs">
+      <DependentUpon>Opciones_busqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Secciones_trabajador\Opciones_busqueda.aspx.designer.cs">
+      <DependentUpon>Opciones_busqueda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Secciones_trabajador\Registrar.aspx.cs">
+      <DependentUpon>Registrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Secciones_trabajador\Registrar.aspx.designer.cs">
+      <DependentUpon>Registrar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Secciones_trabajador\RegistroAcurso.aspx.cs">
       <DependentUpon>RegistroAcurso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Secciones_trabajador\RegistroAcurso.aspx.designer.cs">
       <DependentUpon>RegistroAcurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Secciones_trabajador\registroCorrecto.aspx.cs">
+      <DependentUpon>registroCorrecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Secciones_trabajador\registroCorrecto.aspx.designer.cs">
+      <DependentUpon>registroCorrecto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -327,11 +355,15 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Secciones_trabajador\Buscador.aspx" />
     <Content Include="Secciones_trabajador\cursosdisponibles.aspx" />
     <Content Include="Secciones_trabajador\JavaTrabajador.js" />
     <Content Include="Secciones_trabajador\Menu.aspx" />
     <Content Include="Secciones_trabajador\MisCursos.aspx" />
+    <Content Include="Secciones_trabajador\Opciones_busqueda.aspx" />
+    <Content Include="Secciones_trabajador\Registrar.aspx" />
     <Content Include="Secciones_trabajador\RegistroAcurso.aspx" />
+    <Content Include="Secciones_trabajador\registroCorrecto.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
